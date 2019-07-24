@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+        <div id = "purple_bar"></div>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        <meta name="description" conent=" A Homepage, FAQ Page, About Page, Interview page and candidates.">
+   
+        <Title>Interview Page</Title>
+        <script type="text/javascript" src="script.js"></script>
+
+        <link rel = "stylesheet" href= "{{ url_for('static',filename='styles/stylesheet.css') }}"/>
+<link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css ">
+
+</head>
+
+<body>
+      
+        <ul>
+                <li><a href="Candidate.html" target="_blank">Candidates</a><li>
+                <li><a href="About.html" target="_blank">About</a></li>
+                <li><a href="FAQ.html" target="_blank">Faq</a></li>
+                </ul>
+                <div style="margin-left:15%;padding:1px 16px;height:1000px;">
+
+ <h3> Welcome to an Application that will Allow you to process Candidates for a Potential job hire.</h3>
+         <p>You will be able to process applicants below with the action button, you will be able to input the interviewer, interviewee, candidate name and time. </p>     
+   <div class="form">
+         <form id="interviews" action="#" method="post">
+       
+    <label for ="name">Interviewee:</label>
+    <input type="text" id="interviewee" name="interviewee">
+    
+      
+    <label for ="name">Interviewer:</label>
+    <input type="text" id="interviewer" name="interviewer">
+      
+    <label for ="mail">Candidates Email:</label>
+    <input type="email" id="candidates email" name="candidates_email">
+    
+    <div class= email>
+    <label for ="mail">Interviewer Email:</label>
+    <input type="email" id="interviewer email" name="Interviewer_Email">
+    </div>
+    <label for="checkbox">Intern:</label>
+    <input type="checkbox" id="intern" name="checkbox" value="intern">
+        
+    <label for="checkbox">Apprentenship:</label>
+    <input type="checkbox" id="Apprentenship" name="checkbox" value="Apprentenship">
+       
+    <label for="checkbox">Full-Time:</label>
+    <input type="checkbox" id="full-time" name="checkbox" value="full-time">
+        <div class=description>
+    <label for="description">Description:</label>
+    <textarea id="description" name="candidate_description"></textarea>
+        </div>
+    <label for="time"> Time:</label>
+    <input type="datetime-local" id="time" name="bdaytime">
+        
+          <input type="submit" value="send" class="btn btn-primary btn-block" />
+        </form>    
+        <pre id="output"></pre>     
+</div>
+<div class=items>
+                <table id="itemTable"
+                        class="table table-bordered
+                                table-condensed table-striped">
+                <thead>
+                <tr>
+                <th>Interviewee</th>
+                <th>Interviewer</th>
+                <th>CandidatesEmail</th>
+                <th>InterviewerEmail</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Time</th>
+                </tr>
+                </thead>
+                </table>
+                </div>     
+  <script>
+         
+               
+
+            (function() {
+                    function toJSONString( form )
+                    {
+                            var obj ={};
+                            var elements = 
+                            formqurySelectorAll()("input, checkbox, textare ");
+                            for(var i=0; i < 
+                            elements.length; ++i) {
+                                    var element = elements[i];
+                                    var interviewee = element.interviewee;
+                                    var value = element.value;
+
+                                    if (interviewee) {
+                                            obj [interviewee] = value;
+                                    }
+                            }
+                            return JSON.stringify(obj);
+                    }
+                    
+                    document.addEventListener(
+                            "DOMContentLoaded", function() {
+                                    var form =
+                                    document.getElementById("interviews");
+                                    var output = 
+                                    document.getElementById("output");
+                                    form.addEventListener(
+                                            "submiit", function(e) {
+                                                    e.preventDefault();
+                                                    var json = toJSONString(
+                                                            this);
+                                                            output.innerHTML = json;
+                                            }, false);
+                                            });
+                                        })();
+               
+                
+                    
+                      
+
+
+
+</script>
+
+
+    </body>
+
+    <footer>
+            2019 &copy; JP Morgan Chase Corp
+        </footer>
+
+
+
+
+
+
+</html>
