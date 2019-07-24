@@ -1,0 +1,169 @@
+#purple_bar{
+    position:fixed;
+    top: 0px;
+    left:0px;
+    width: 10000px;
+    height:10px;
+    background: #9A8BD2;
+}
+
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+    color:black;
+    font-family: Helvetica;
+    font-size: 14px;
+    text-transform: uppercase
+    
+}
+
+footer {
+clear: both;
+    padding: 100px;
+    margin: auto;
+    width: 50%;
+    margin-top: 100%;
+  }
+
+  a:link, a: visited {
+      background-color: #f44336;
+      color: white;
+      padding: 7px 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+  }
+
+  a:hover, a:active {
+      background-color:white;
+  }
+
+ul {
+    top: 10px;
+    margin: 0;
+    padding:0;
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    width: 15%;
+    position: fixed;
+    background-color: #f1f1f1;
+    height: 100%;
+    overflow: auto;
+
+    
+    
+}
+
+li a{
+    display: block;
+    color:#000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a: hover {
+    background-color: #555;
+    color: white;
+}
+
+@font-face {
+    font-family: "VCR";
+    src: url("//https://cdn.shopify.com/s/files/1/1765/5971/t/22/assets/VCR_OSD_MONO.svg?16277359552744346117#VCR") format("svg");
+    font-weight:normal;
+    font-style:normal; }
+
+      button {
+        background-color: grey ;
+        color: white;
+        padding: 10px 10px;
+        margin: 4px 0;
+        border: black;
+        cursor: pointer;
+        width: 50%;
+        top: 50%; 
+        position: absolute;
+       margin: auto;
+
+      }
+
+
+.button {
+ padding-left:90px;
+}
+
+button {
+    
+    width:250px;
+    margin: 0 auto;
+}
+
+form {
+    * {box-sizing: border-box;}
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: grey;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: blue;
+  }
+  
+  
+.form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 700px;
+}
+
+.email {
+    margin-top: 4px;
+}
+
+.description {
+    margin-top: 8px;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .items{
+      margin-top:8px;
+  }
+
+  .updateButton{
+    position: absolute;
+    right: 10px;
+    top:100px;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  
+  table, td, th {
+    border: 1px solid black;
+  }
