@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <div id ="purple_bar"></div>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name= "viewport" content= "width=device-width, inital-scale=1">
+        <meta name="description" content=" A Homepage, FAQ Page, About Page and Interview page.">
+        <Title> Candidates Page</Title>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel = "stylesheet" href= "{{ url_for('static',filename='styles/stylesheet.css') }}"/>
+        <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css "/>
+       
+    </head>
+    <body> 
+
+        <ul> 
+            <li><a href="/interviews" targer="_blank">Interviews</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+        </ul>
+        <div style="margin-left:15%; padding: 1px 16px; height:1000px;">
+            <h3>Here are Processed Forms for Potential Candidates for hire</h3>
+
+            <div class="ghost"> 
+                    <div class="form">
+                       <form id="interviews" method="POST" action= "{{url_for('interview')}}">
+                          
+                       <label for ="name">Interviewee:</label>
+                       <input type="text" id="interviewee" name="interviewee">
+                       
+                         
+                       <label for ="name">Interviewer:</label>
+                       <input type="text" id="interviewer" name="interviewer">
+                         
+                       <label for ="mail">Candidates Email:</label>
+                       <input type="email" id="candidatesemail" name="candidatesEmail">
+                       
+                       <div class= "email">
+                       <label for ="mail">Interviewer Email:</label>
+                       <input type="email" id="interviewer email" name="interviewerEmail">
+                       </div>
+                       <label for="checkbox">Intern:</label>
+                       <input type="checkbox" id="intern" name="type" value="intern">
+                           
+                       <label for="checkbox">Apprentenship:</label>
+                       <input type="checkbox" id="Apprentenship" name="type" value="Apprentenship">
+                          
+                       <label for="checkbox">Full-Time:</label>
+                       <input type="checkbox" id="full-time" name="type" value="full-time">
+                           <div class="description">
+                       <label for="description">Description:</label>
+                       <textarea id="description" name="description"></textarea>
+                           </div>
+                       <label for="time"> Time:</label>
+                       <input type="datetime-local" id="time" name="time">
+                           <div class= submit-button>
+                      <button class="interviews-form__button" name="submit" value="submit" type="submit" onclick="displayResult()"> Submit</button>
+                           </div>
+                        </form>
+
+
+            </div>
+</div>
+            <div class="items">
+                    <table id="itemTable"
+                            class="table table-bordered
+                                    table-condensed table-striped" >
+                                    <tr id="candidatesTable"></tr>
+                    <thead>
+                    <tr>
+                    <th>Interviewee</th>
+                    <th>Interviewer</th>
+                    <th>CandidatesEmail</th>
+                    <th>InterviewerEmail</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Time</th>
+                    <th>delete</th>
+                    <th>Edit</th>
+                    <th>Save</th>
+       
+                  
+                    </tr>
+                    </thead>
+                    
+                    {% for interview in interviews %} 
+                    <tr>
+                                    <th>{{interview.interviewee}}</th>
+                                    <th>{{interview.interviewer}}</th>
+                                    <th>{{interview.candidatesEmail}}</th>
+                                    <th>{{interview.interviewerEmail}}</th>
+                                    <th>{{interview.description}}</th>
+                                    <th>{{interview.type}}</th>
+                                    <th>{{interview.time}}</th>
+                                    <td><input type="button" value="Delete Row" onclick="deleteRowFunction(this);"></td>
+                                    <td><input type="button"  value="Edit Row" onclick="editRowFunction(this);"></td>
+                                    <td><input type="button"  value="Save Row" id="saveRow" onclick="saveRowFunction(this);"></td>
+                                    
+                                    </tr>
+                    {% endfor %}
+                   
+                    </table>
+
+                    </div>    
+                    
+            
+                    <script> 
+                    function deleteRowFunction(btndelete) {
+                        if(typeof(btndelete) == "object") { 
+                            $(btndelete).closest("tr").remove();
+                        } else {
+                            return false;
+                        }
+                    }
+                    function editRowFunction(btnedit) {
+                        if(typeof(btnedit) == "object") {
+                           $(btnedit).closest("tr").prop("contentEditable", true);
+                        } else {
+                            return false;
+                        }
+                    }
+               
+                    function saveRowFunction(btnsave) {
+                        if(typeof(btnsave) == "object") {
+                            $(btnsave).closest("tr").prop("contentEditable", false);
+                        } else {
+                            return false;
+                        }
+                    }
+                 
+                       
+                    
+                    </script>
+     
+    </body>
+</html>
