@@ -87,11 +87,11 @@
 </head>
 
 <body>
-              {{interviews}}
+              
         <ul>
-                <li><a href="Candidate.html" target="_blank">Candidates</a><li>
-                <li><a href="About.html" target="_blank">About</a></li>
-                <li><a href="FAQ.html" target="_blank">Faq</a></li>
+                <li><a href="/candidates" target="_blank">Candidates</a><li>
+                <li><a href="/about" target="_blank">About</a></li>
+                <li><a href="/faq" target="_blank">Faq</a></li>
                 </ul>
                 <div style="margin-left:15%;padding:1px 16px;height:1000px;">
 
@@ -128,47 +128,15 @@
         </div>
     <label for="time"> Time:</label>
     <input type="datetime-local" id="time" name="time">
-        
+        <div class= submit-button>
    <button class="interviews-form__button" name="submit" value="submit" type="submit" onclick="displayResult()"> Submit</button>
+        </div>
         </form>   
 
-        <div class="results">
-                        <h2 class="results__heading">Form Data</h2>
-                        <pre class="results__display-wrapper"><code class="results__display"></code></pre>
-                      </div> 
+
       
 </div>
-<div class="items">
-                <table id="itemTable"
-                        class="table table-bordered
-                                table-condensed table-striped">
-                                <tr id="candidatesTable"></tr>
-                <thead>
-                <tr>
-                <th>Interviewee</th>
-                <th>Interviewer</th>
-                <th>CandidatesEmail</th>
-                <th>InterviewerEmail</th>
-                <th>Description</th>
-                <th>Type</th>
-                <th>Time</th>
-                </tr>
-                </thead>
-                {% for interview in interviews %} 
-                <tr>
-                                <th>{{interview.interviewee}}</th>
-                                <th>{{interview.interviewer}}</th>
-                                <th>{{interview.candidatesEmail}}</th>
-                                <th>{{interview.interviewerEmail}}</th>
-                                <th>{{interview.description}}</th>
-                                <th>{{interview.type}}</th>
-                                <th>{{interview.time}}</th>
-                                </tr>
-                {% endfor %}
-                </table>
-                </div>    
- 
-  
+
 
 
     </body>
