@@ -72,11 +72,7 @@ li a: hover {
     color: white;
 }
 
-@font-face {
-    font-family: "VCR";
-    src: url("//https://cdn.shopify.com/s/files/1/1765/5971/t/22/assets/VCR_OSD_MONO.svg?16277359552744346117#VCR") format("svg");
-    font-weight:normal;
-    font-style:normal; }
+
 
       button {
         background-color: grey ;
@@ -136,6 +132,7 @@ input[type=submit] {
     background-color: #f2f2f2;
     padding: 20px;
     width: 700px;
+    length: 700px;
 }
 
 .email {
@@ -144,6 +141,9 @@ input[type=submit] {
 
 .description {
     margin-top: 8px;
+}
+.submit {
+    margin-top: 30px;
 }
 td, th {
     border: 1px solid #dddddd;
@@ -167,3 +167,71 @@ td, th {
   table, td, th {
     border: 1px solid black;
   }
+
+
+  .results__heading {
+    font-size: 110%;
+  }
+
+.results__display-wrapper {
+    margin-top: 16px;
+    margin-top: 1rem;
+    padding: 8px 16px;
+    padding: 0.5rem 1rem;
+    background: #f9fdfe;
+    border: 1px solid 
+    #cdcfcf;
+    overflow-x: scroll;
+  }
+.interviews-form__input:focus,.interviews-form__input:active {
+    border-color: #686a69;
+    outline: 0;
+  }
+
+.interviews-form__button {
+  display: block;
+  margin: 8px 16px 0;
+  margin: 0.5rem 1rem 0;
+  padding: 0 16px 2px;
+  padding: 0 1rem 0.125rem;
+  background-color: #686a69;
+  border: 0;
+  color: #f9fdfe;
+  font-family: lato, sans-serif;
+  font-size: 100%;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  transition: 150ms all linear;
+}
+
+.interviews-form__button:hover,.interviews-form__button:active,.interviews-form__button:focus {
+    background: #2a2f2c;
+    cursor: pointer;
+    outline: 0;
+  }
+
+.interviews-form__button {
+margin-left: 150px;
+margin-top:120px;
+
+}
+
+.items {
+    margin-top: 25px;
+}
+
+.ghost {
+    position: absolute;  left: -999999px;
+
+
+}
+.about-paragraph{
+    word-wrap: break-word;
+    width: 400px; 
+  
+}
+.about-page {
+
+  
+}
