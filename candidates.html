@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head> 
-        <div id ="purple_bar"></div>
+        <div id ="orange_bar"></div>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name= "viewport" content= "width=device-width, inital-scale=1">
@@ -23,12 +23,12 @@
             <li><a href="/about" target="_blank">About</a></li>
             <li><a href="/faq" target="_blank">FAQ</a></li>
         </ul>
-        <div style="margin-left:15%; padding: 1px 16px; height:1000px;">
+        <div  style="margin-left:15%; padding: 1px 16px; height:1000px;">
             <h3>Here are Processed Forms for Potential Candidates for hire</h3>
 
             <div class="ghost"> 
                     <div class="form">
-                       <form id="interviews" method="POST" action= "{{url_for('interview')}}">
+                       <form id="interviews" name="interviews" method="POST" action= "{{url_for('interview')}}">
                           
                        <label for ="name">Interviewee:</label>
                        <input type="text" id="interviewee" name="interviewee">
@@ -45,13 +45,13 @@
                        <input type="email" id="interviewer email" name="interviewerEmail">
                        </div>
                        <label for="checkbox">Intern:</label>
-                       <input type="checkbox" id="intern" name="type" value="intern">
+                       <input type="checkbox" id="intern" name="job" value="intern">
                            
                        <label for="checkbox">Apprentenship:</label>
-                       <input type="checkbox" id="Apprentenship" name="type" value="Apprentenship">
+                       <input type="checkbox" id="Apprentenship" name="job" value="Apprentenship">
                           
                        <label for="checkbox">Full-Time:</label>
-                       <input type="checkbox" id="full-time" name="type" value="full-time">
+                       <input type="checkbox" id="full-time" name="job" value="full-time">
                            <div class="description">
                        <label for="description">Description:</label>
                        <textarea id="description" name="description"></textarea>
@@ -78,7 +78,7 @@
                     <th>CandidatesEmail</th>
                     <th>InterviewerEmail</th>
                     <th>Description</th>
-                    <th>Type</th>
+                    <th>Job</th>
                     <th>Time</th>
                     <th>delete</th>
                     <th>Edit</th>
@@ -95,7 +95,7 @@
                                     <th>{{interview.candidatesEmail}}</th>
                                     <th>{{interview.interviewerEmail}}</th>
                                     <th>{{interview.description}}</th>
-                                    <th>{{interview.type}}</th>
+                                    <th>{{interview.job}}</th>
                                     <th>{{interview.time}}</th>
                                     <td><input type="button" value="Delete Row" onclick="deleteRowFunction(this);"></td>
                                     <td><input type="button"  value="Edit Row" onclick="editRowFunction(this);"></td>
@@ -110,12 +110,20 @@
                     
             
                     <script> 
-                    function deleteRowFunction(btndelete) {
-                        if(typeof(btndelete) == "object") { 
-                            $(btndelete).closest("tr").remove();
-                        } else {
-                            return false;
-                        }
+                    function deleteRowFunction() {
+                        with open ("interviews.json", 'r') as f:
+                        interviews2 = json.loads(f.read()) 
+                        print (interviews2)
+                        interviews3 = [ ]
+                        for i in interviews2 :
+                        interviews3.remove(interviews2[i])
+                                            
+        
+                        // if(typeof(btndelete) == "object") { 
+                        //     $(btndelete).closest("tr").remove(:);
+                        // } else {
+                        //     return false;
+                        // }
                     }
                     function editRowFunction(btnedit) {
                         if(typeof(btnedit) == "object") {
@@ -136,6 +144,7 @@
                        
                     
                     </script>
+                    
      
     </body>
 </html>
