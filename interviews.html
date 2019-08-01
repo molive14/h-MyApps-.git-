@@ -3,7 +3,7 @@
 
 <head>
 
-        <div id = "purple_bar"></div>
+        <div id = "orange_bar"></div>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, inital-scale=1">
@@ -16,73 +16,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel = "stylesheet" href= "{{ url_for('static',filename='styles/stylesheet.css') }}"/>
         <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css "/>
-        <!-- <script>
-
-                        const formToJSON = elements => [].reduce.call(elements, (data, element) => {
-                         data[element.name] = element.value;
-                         return data;
-                          }, {});
-                 
-                         const handleFormSubmit = event => {  
-                         
-                         //Stops the form from submitting handled with ajax
-                         event.preventDefault();
-                 
-                         //Call function to get form data
-                         const data = formToJSON(form.elements);
-                 
-                         //Print form data onscreen formatted JSON 
-                         const dataContainer = document.getElementById('results__display')[0];
-                        
-                 
-                         //Use of JSON.stringify() to make the output valid human readable JSON.
-                         dataContainer.textContent = JSON.stringify(data, null, " ");
-                        };
-                         //Use of the form here
-                         const form = document.getElementById('interviews');
-                        console.log(document.getElementById('interviewee' ) + "word");
-                         form.addEventListener('submit', handleFormSubmit);
-                 
-                         //Insert rows to html table
-                         function displayResult()
-                         {
-                                 const data = formToJSON(form.elements);
-                                 var x = document.createElement("TD");
-                                 var t = document.createTextNode(data, null, " ");
-                                 x.appendChild(t);
-                                 console.log(x +"word");
-                                 
-                                 document.getElementById("candidatesTable").appendChild(x);
-                
-                        const handleFormSubmit = event => {
-                        
-                                // Stop the form from submitting since we’re handling that with AJAX.
-                                event.preventDefault();
-                                
-                                // Call our function to get the form data.
-                                const data = formToJSON(form.elements);
-        
-                                // Demo only: print the form data onscreen as a formatted JSON object.
-                                const dataContainer = document.getElementsByClassName('results__display')[0];
-                                
-                                // Use `JSON.stringify()` to make the output valid, human-readable JSON.
-                                dataContainer.textContent = JSON.stringify(data, null, "  ");
-                                
-                                // ...this is where we’d actually do something with the form data...
-                        };
-        
-                        /*
-                        * This is where things actually get started. We find the form element using
-                        * its class name, then attach the `handleFormSubmit()` function to the 
-                        * `submit` event.
-                        */
-                        const form = document.getElementById('interviews')[0];
-                        form.addEventListener('submit', handleFormSubmit);   
-                        }
-        
-                       
-                                 
-        </script> -->
+   
        
 </head>
 
@@ -98,12 +32,11 @@
  <h3> Welcome to an Application that will Allow you to process Candidates for a Potential job hire.</h3>
          <p>You will be able to process applicants below with the action button, you will be able to input the interviewer, interviewee, candidate name and time. </p>     
    <div class="form">
-         <form id="interviews" method="POST" action= "{{url_for('interview')}}">
+         <form id="interviews" name=interviews method="POST" action= "{{url_for('interview')}}">
        
     <label for ="name">Interviewee:</label>
     <input type="text" id="interviewee" name="interviewee">
     
-      
     <label for ="name">Interviewer:</label>
     <input type="text" id="interviewer" name="interviewer">
       
@@ -115,13 +48,13 @@
     <input type="email" id="interviewer email" name="interviewerEmail">
     </div>
     <label for="checkbox">Intern:</label>
-    <input type="checkbox" id="intern" name="type" value="intern">
+    <input type="checkbox" id="intern" name="job" value="intern">
         
     <label for="checkbox">Apprentenship:</label>
-    <input type="checkbox" id="Apprentenship" name="type" value="Apprentenship">
+    <input type="checkbox" id="Apprentenship" name="job" value="Apprentenship">
        
     <label for="checkbox">Full-Time:</label>
-    <input type="checkbox" id="full-time" name="type" value="full-time">
+    <input type="checkbox" id="full-time" name="job" value="full-time">
         <div class="description">
     <label for="description">Description:</label>
     <textarea id="description" name="description"></textarea>
@@ -129,7 +62,7 @@
     <label for="time"> Time:</label>
     <input type="datetime-local" id="time" name="time">
         <div class= submit-button>
-   <button class="interviews-form__button" name="submit" value="submit" type="submit" onclick="displayResult()"> Submit</button>
+   <button class="interviews-form__button" name="submit" value="submit" type="submit" > Submit</button>
         </div>
         </form>   
 
