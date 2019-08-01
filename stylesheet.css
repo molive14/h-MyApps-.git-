@@ -1,10 +1,10 @@
-#purple_bar{
+#orange_bar{
     position:fixed;
     top: 0px;
     left:0px;
     width: 10000px;
     height:10px;
-    background: #9A8BD2;
+    background: #FFA500;
 }
 
 
@@ -234,4 +234,13 @@ margin-top:120px;
 .about-page {
 
   
+}
+
+:scope 
+
+pattern: {min-height: 200px;}
+
+
+.stripes {
+  background-image: repeating-linear-gradient(45deg, #ccc, #ccc 30px, #dbdbdb 30px, #dbdbdb 60px);
 }
