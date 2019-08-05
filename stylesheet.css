@@ -4,12 +4,14 @@
     left:0px;
     width: 10000px;
     height:10px;
-    background: #FFA500;
+    background: #0000ff;
+  
 }
 
 
 .fa:hover {
     opacity: 0.7;
+  
 }
 
 body {
@@ -20,7 +22,7 @@ body {
     font-size: 14px;
     text-transform: uppercase
     
-}
+} 
 
 footer {
 clear: both;
@@ -40,7 +42,7 @@ clear: both;
   }
 
   a:hover, a:active {
-      background-color:white;
+      background-color: white ;
   }
 
 ul {
@@ -55,7 +57,11 @@ ul {
     background-color: #f1f1f1;
     height: 100%;
     overflow: auto;
+    /* background-color:  white  ; */
+    opacity: 0.5;
+    filter: alpha(opacity=50);
 
+   
     
     
 }
@@ -65,6 +71,7 @@ li a{
     color:#000;
     padding: 8px 16px;
     text-decoration: none;
+     
 }
 
 li a: hover {
@@ -101,16 +108,19 @@ button {
 
 form {
     * {box-sizing: border-box;}
+    
+
 }
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
+    background: #ff5200; 
 }
 
 input[type=submit] {
@@ -123,24 +133,27 @@ input[type=submit] {
   }
 
   input[type=submit]:hover {
-    background-color: blue;
+    background-color: #ff5200;
   }
   
   
 .form {
-    border-radius: 5px;
-    background-color: #f2f2f2;
+
+    background-color: #ff5200;
     padding: 20px;
     width: 700px;
     length: 700px;
+    background:#ff5200;
 }
 
 .email {
     margin-top: 4px;
+    background: #ff5200;
 }
 
 .description {
     margin-top: 8px;
+    background: #ff5200;
 }
 .submit {
     margin-top: 30px;
@@ -148,7 +161,8 @@ input[type=submit] {
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
+    padding: 8px;s
+ 
   }
   
   .items{
@@ -166,6 +180,7 @@ td, th {
   
   table, td, th {
     border: 1px solid black;
+       background: #ff5200;
   }
 
 
@@ -173,18 +188,9 @@ td, th {
     font-size: 110%;
   }
 
-.results__display-wrapper {
-    margin-top: 16px;
-    margin-top: 1rem;
-    padding: 8px 16px;
-    padding: 0.5rem 1rem;
-    background: #f9fdfe;
-    border: 1px solid 
-    #cdcfcf;
-    overflow-x: scroll;
-  }
+
 .interviews-form__input:focus,.interviews-form__input:active {
-    border-color: #686a69;
+    border-color: #ff5200;
     outline: 0;
   }
 
@@ -194,9 +200,9 @@ td, th {
   margin: 0.5rem 1rem 0;
   padding: 0 16px 2px;
   padding: 0 1rem 0.125rem;
-  background-color: #686a69;
+  background-color: #ff5200;
   border: 0;
-  color: #f9fdfe;
+  color: black;
   font-family: lato, sans-serif;
   font-size: 100%;
   letter-spacing: 0.05em;
@@ -206,14 +212,15 @@ td, th {
 }
 
 .interviews-form__button:hover,.interviews-form__button:active,.interviews-form__button:focus {
-    background: #2a2f2c;
+
     cursor: pointer;
     outline: 0;
   }
 
 .interviews-form__button {
 margin-left: 150px;
-margin-top:120px;
+margin-top:25px;
+position: relative;
 
 }
 
@@ -242,5 +249,13 @@ pattern: {min-height: 200px;}
 
 
 .stripes {
-  background-image: repeating-linear-gradient(45deg, #ccc, #ccc 30px, #dbdbdb 30px, #dbdbdb 60px);
+  background-image: linear-gradient(45deg, #000000 25%, #ffffff 25%, #ffffff 50%, #000000 50%, #000000 75%, #ffffff 75%, #ffffff 100%);
+background-size: 98.99px 98.99px;
+}
+body{
+  background: white;
+}
+/* ul a{ color: white} */
+.submit-button {
+  margin-top: 80px;
 }
