@@ -1,221 +1,221 @@
 #orange_bar{
-    position:fixed;
-    top: 0px;
-    left:0px;
-    width: 10000px;
-    height:10px;
-    background: #0000ff;
-  
+  position:fixed;
+  top: 0px;
+  left:0px;
+  width: 10000px;
+  height:10px;
+  background: #0000ff;
+
 }
 
 
 .fa:hover {
-    opacity: 0.7;
-  
+  opacity: 0.7;
+
 }
 
 body {
-    margin: 0;
-    background-color: #fff;
-    color:black;
-    font-family: Helvetica;
-    font-size: 14px;
-    text-transform: uppercase
-    
+  margin: 0;
+  background-color: #fff;
+  color:black;
+  font-family: Helvetica;
+  font-size: 14px;
+  text-transform: uppercase
+  
 } 
 
 footer {
 clear: both;
-    padding: 100px;
-    margin: auto;
-    width: 50%;
-    margin-top: 100%;
-  }
+  padding: 100px;
+  margin: auto;
+  width: 50%;
+  margin-top: 100%;
+}
 
-  a:link, a: visited {
-      background-color: #f44336;
-      color: white;
-      padding: 7px 12px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-  }
+a:link, a: visited {
+    background-color: #f44336;
+    color: white;
+    padding: 7px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
 
-  a:hover, a:active {
-      background-color: white ;
-  }
+a:hover, a:active {
+    background-color: white ;
+}
 
 ul {
-    top: 10px;
-    margin: 0;
-    padding:0;
-    list-style-type: none;
-    margin: 0;
-    padding:0;
-    width: 15%;
-    position: fixed;
-    background-color: #f1f1f1;
-    height: 100%;
-    overflow: auto;
-    /* background-color:  white  ; */
-    opacity: 0.5;
-    filter: alpha(opacity=50);
+  top: 10px;
+  margin: 0;
+  padding:0;
+  list-style-type: none;
+  margin: 0;
+  padding:0;
+  width: 15%;
+  position: fixed;
+  background-color: #f1f1f1;
+  height: 100%;
+  overflow: auto;
+  /* background-color:  white  ; */
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 
-   
-    
-    
+ 
+  
+  
 }
 
 li a{
-    display: block;
-    color:#000;
-    padding: 8px 16px;
-    text-decoration: none;
-     
+  display: block;
+  color:#000;
+  padding: 8px 16px;
+  text-decoration: none;
+   
 }
 
 li a: hover {
-    background-color: #555;
-    color: white;
+  background-color: #555;
+  color: white;
 }
 
 
 
-      button {
-        background-color: grey ;
-        color: white;
-        padding: 10px 10px;
-        margin: 4px 0;
-        border: black;
-        cursor: pointer;
-        width: 50%;
-        top: 50%; 
-        position: absolute;
-       margin: auto;
+    button {
+      background-color: grey ;
+      color: white;
+      padding: 10px 10px;
+      margin: 4px 0;
+      border: black;
+      cursor: pointer;
+      width: 50%;
+      top: 50%; 
+      position: absolute;
+     margin: auto;
 
-      }
+    }
 
 
 .button {
- padding-left:90px;
+padding-left:90px;
 }
 
 button {
-    
-    width:250px;
-    margin: 0 auto;
+  
+  width:250px;
+  margin: 0 auto;
 }
 
 form {
-    * {box-sizing: border-box;}
-    
+  * {box-sizing: border-box;}
+  
 
 }
 input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid black;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    background: #ff5200; 
+  width: 100%;
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background: #ff5200; 
 }
 
 input[type=submit] {
-    background-color: grey;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+  background-color: grey;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  input[type=submit]:hover {
-    background-color: #ff5200;
-  }
-  
-  
+input[type=submit]:hover {
+  background-color: #ff5200;
+}
+
+
 .form {
 
-    background-color: #ff5200;
-    padding: 20px;
-    width: 700px;
-    length: 700px;
-    background:#ff5200;
+  background-color: #ff5200;
+  padding: 20px;
+  width: 700px;
+  length: 700px;
+  background:#ff5200;
 }
 
 .email {
-    margin-top: 4px;
-    background: #ff5200;
+  margin-top: 4px;
+  background: #ff5200;
 }
 
 .description {
-    margin-top: 8px;
-    background: #ff5200;
+  margin-top: 8px;
+  background: #ff5200;
 }
 .submit {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;s
- 
-  }
-  
-  .items{
-      margin-top:8px;
-  }
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;s
 
-  .updateButton{
-    position: absolute;
-    right: 10px;
-    top:100px;
-  }
-  table {
-    border-collapse: collapse;
-  }
-  
-  table, td, th {
-    border: 1px solid black;
-       background: #ff5200;
-  }
+}
+
+.items{
+    margin-top:8px;
+}
+
+.updateButton{
+  position: absolute;
+  right: 10px;
+  top:100px;
+}
+table {
+  border-collapse: collapse;
+}
+
+table, td, th {
+  border: 1px solid black;
+     background: #ff5200;
+}
 
 
-  .results__heading {
-    font-size: 110%;
-  }
+.results__heading {
+  font-size: 110%;
+}
 
 
 .interviews-form__input:focus,.interviews-form__input:active {
-    border-color: #ff5200;
-    outline: 0;
-  }
+  border-color: #ff5200;
+  outline: 0;
+}
 
 .interviews-form__button {
-  display: block;
-  margin: 8px 16px 0;
-  margin: 0.5rem 1rem 0;
-  padding: 0 16px 2px;
-  padding: 0 1rem 0.125rem;
-  background-color: #ff5200;
-  border: 0;
-  color: black;
-  font-family: lato, sans-serif;
-  font-size: 100%;
-  letter-spacing: 0.05em;
-  line-height: 1.5;
-  text-transform: uppercase;
-  transition: 150ms all linear;
+display: block;
+margin: 8px 16px 0;
+margin: 0.5rem 1rem 0;
+padding: 0 16px 2px;
+padding: 0 1rem 0.125rem;
+background-color: #ff5200;
+border: 0;
+color: black;
+font-family: lato, sans-serif;
+font-size: 100%;
+letter-spacing: 0.05em;
+line-height: 1.5;
+text-transform: uppercase;
+transition: 150ms all linear;
 }
 
 .interviews-form__button:hover,.interviews-form__button:active,.interviews-form__button:focus {
 
-    cursor: pointer;
-    outline: 0;
-  }
+  cursor: pointer;
+  outline: 0;
+}
 
 .interviews-form__button {
 margin-left: 150px;
@@ -225,22 +225,21 @@ position: relative;
 }
 
 .items {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .ghost {
-    position: absolute;  left: -999999px;
+  position: absolute;  left: -999999px;
 
 
 }
 .about-paragraph{
-    word-wrap: break-word;
-    width: 400px; 
-  
+  word-wrap: break-word;
+  width: 400px; 
+
 }
 .about-page {
 
-  
 }
 
 :scope 
@@ -249,22 +248,56 @@ pattern: {min-height: 200px;}
 
 
 .stripes {
-  background-image: linear-gradient(45deg, #000000 25%, #ffffff 25%, #ffffff 50%, #000000 50%, #000000 75%, #ffffff 75%, #ffffff 100%);
+background-image: linear-gradient(45deg, #000000 25%, #ffffff 25%, #ffffff 50%, #000000 50%, #000000 75%, #ffffff 75%, #ffffff 100%);
 background-size: 98.99px 98.99px;
 }
 body{
-  background: white;
+background: white;
 }
 /* ul a{ color: white} */
 .submit-button {
-  margin-top: 80px;
+margin-top: 80px;
 }
 .time{
-  margin-top: 8px;
+margin-top: 8px;
 }
 .telephone{
-  margin-top: 20px;
+margin-top: 20px;
 }
 .resume{
-  margin-top: 20px;
+margin-top: 20px;
+}
+
+.open-button {
+  background-color: #0000ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  position: fixed;
+  top: 23px;
+  right: 10px;
+  width: 280px;
+}
+.interviewForm-popup {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+
+  z-index: 9;
+  box-sizing: border-box;
+}
+.form-container {
+  max-width: 500px;
+  padding: 10px;
+  background-color: #ff5200;
+  outline: 0;
+
+}
+.interviews-form__close {
+  margin-top: 200px; 
+}
+.radio {
+  margin-top: 8px;
 }
