@@ -41,14 +41,12 @@
     
     <label for ="name">Interviewer:</label>
     <input type="text" id="interviewer" name="interviewer">
-      
+    
+    <div class= "email">
+    
     <label for ="mail">Candidates Email:</label>
     <input type="text" id="candidatesemail" name="candidatesEmail">
     
-    <div class= "email">
-    <label for ="mail">Interviewer Email:</label>
-    <input type="text" id="interviewer email" name="interviewerEmail">
-    </div>
     <label for="checkbox">Intern:</label>
     <input type="checkbox" id="intern" name="job" value="intern">
         
@@ -57,15 +55,27 @@
        
     <label for="checkbox">Full-Time:</label>
     <input type="checkbox" id="full-time" name="job" value="full-time">
-        <div class="description">
+        
+    <div class="description">
     <label for="description">Description:</label>
     <textarea id="description" name="description"></textarea>
         </div>
+        
     <label for="time"> Time:</label>
     <input type="datetime-local" id="time" name="time">
-        <div class= submit-button>
+
+   <div class= "telephone">
+    <label for= "telephone">Telephone</label>
+    <input type="tel" id = "phone" name="telephone">
+        </div>
+        <div class= "resume">
+    <label for="resume"> Resume </label>
+    <input type="file" id="resume" name="resume">
+        </div>
+    <div class= submit-button>
    <button class="interviews-form__button" name="submit" value="submit" type="submit" > Submit</button>
         </div>
+</div>
         </form>   
 
 
