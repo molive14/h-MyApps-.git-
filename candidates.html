@@ -40,32 +40,87 @@
                        <label for ="mail">Candidates Email:</label>
                        <input type="email" id="candidatesemail" name="candidatesEmail">
                        
-                       <div class= "email">
-                       <label for ="mail">Interviewer Email:</label>
-                       <input type="email" id="interviewer email" name="interviewerEmail">
-                       </div>
-                       <label for="checkbox">Intern:</label>
-                       <input type="checkbox" id="intern" name="job" value="intern">
+                      
+                       <label for="radio">Intern:</label>
+                       <input type="radio" id="intern" name="job" value="intern">
                            
-                       <label for="checkbox">Apprentenship:</label>
-                       <input type="checkbox" id="Apprentenship" name="job" value="Apprentenship">
+                       <label for="radio">Apprentenship:</label>
+                       <input type="radio" id="Apprentenship" name="job" value="Apprentenship">
                           
-                       <label for="checkbox">Full-Time:</label>
-                       <input type="checkbox" id="full-time" name="job" value="full-time">
+                       <label for="radio">Full-Time:</label>
+                       <input type="radio" id="full-time" name="job" value="full-time">
                            <div class="description">
                        <label for="description">Description:</label>
                        <textarea id="description" name="description"></textarea>
                            </div>
                        <label for="time"> Time:</label>
                        <input type="datetime-local" id="time" name="time">
+                       <div class= "telephone">
+                        <label for= "telephone">Telephone</label>
+                        <input type="tel" id = "phone" name="telephone">
+                            </div>
+                            <div class= "resume">
+                        <label for="resume"> Resume </label>
+                        <input type="file" id="resume" name="resume">
+                            </div>
+
                            <div class= submit-button>
                       <button class="interviews-form__button" name="submit" value="submit" type="submit" onclick="displayResult()"> Submit</button>
                            </div>
                         </form>
 
+<div class="interviewForm-popup" id="interview-popup">
+    <form class="form-container" id="interviews" name="interviews" method="POST" action= "{{url_for('interview')}}">
+        <label for ="name">Interviewee:</label>
+        <input type="text" id="interviewee" name="interviewee">
+        
+          
+        <label for ="name">Interviewer:</label>
+        <input type="text" id="interviewer" name="interviewer">
+          
+        <label for ="mail">Candidates Email:</label>
+        <input type="text" id="candidatesemail" name="candidatesEmail">
+        
+        <div class= "radio">
+        <label for="radio">Intern:</label>
+        <input type="radio" id="intern" name="job" value="intern">
+            
+        <label for="radio">Apprentenship:</label>
+        <input type="radio" id="Apprentenship" name="job" value="Apprentenship">
+           
+        <label for="radio">Full-Time:</label>
+        <input type="radio" id="full-time" name="job" value="full-time">
+        </div>
 
+        <div class="description">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea>
+            </div>
+        <label for="time"> Time:</label>
+        <input type="datetime-local" id="time" name="time">
+
+        <div class= "telephone">
+            <label for= "telephone">Telephone</label>
+            <input type="tel" id = "phone" name="telephone">
+                </div>
+                <div class= "resume">
+            <label for="resume"> Resume </label>
+            <input type="file" id="resume" name="resume">
+                </div>
+            <div class= submit-button>
+       <button class="interviews-form__button" name="submit" value="submit" type="submit" onclick="displayResult()"> Submit</button>
+       <button type="button" class="interviews-form__close" onclick="closeForm()">Close</button>
+            </div>
+         </form>
+
+
+
+
+
+</div>
             </div>
 </div>
+<button class="open-button" onclick= "openForm()">Add New Candidate</button>
             <div class="items">
                     <table id="itemTable"
                             class="table table-bordered
@@ -76,10 +131,11 @@
                     <th>Interviewee</th>
                     <th>Interviewer</th>
                     <th>CandidatesEmail</th>
-                    <th>InterviewerEmail</th>
+                    <th>Telephone</th>
                     <th>Description</th>
                     <th>Job</th>
                     <th>Time</th>
+                    <th>Resume</th>
                     <th>delete</th>
                     <th>Edit</th>
                     <th>Save</th>
@@ -89,15 +145,16 @@
                     </thead>
                     
                     {% for interview in interviews %} 
-                    <tr>
+                    <tr id = "interview">
                                     <th>{{interview.interviewee}}</th>
                                     <th>{{interview.interviewer}}</th>
                                     <th>{{interview.candidatesEmail}}</th>
-                                    <th>{{interview.interviewerEmail}}</th>
+                                    <th>{{interview.telephone}}</th>
                                     <th>{{interview.description}}</th>
                                     <th>{{interview.job}}</th>
                                     <th>{{interview.time}}</th>
-                                    <td><input type="button" value="Delete Row" onclick="deleteRowFunction(this);"></td>
+                                    <th>{{interview.resume}}</th>
+                                    <td><input  type="button" value="Delete Row" onclick="deleteRowFunction(this);"></td>
                                     <td><input type="button"  value="Edit Row" onclick="editRowFunction(this);"></td>
                                     <td><input type="button"  value="Save Row" id="saveRow" onclick="saveRowFunction(this);"></td>
                                     
@@ -110,20 +167,20 @@
                     
             
                     <script> 
-                    function deleteRowFunction() {
-                        with open ("interviews.json", 'r') as f:
-                        interviews2 = json.loads(f.read()) 
-                        print (interviews2)
-                        interviews3 = [ ]
-                        for i in interviews2 :
-                        interviews3.remove(interviews2[i])
-                                            
-        
-                        // if(typeof(btndelete) == "object") { 
-                        //     $(btndelete).closest("tr").remove(:);
-                        // } else {
-                        //     return false;
-                        // }
+                    function openForm() {
+                        document.getElementById("interview-popup").style.display = "block";
+
+                    }
+                    function closeForm() {
+                        document.getElementById("interview-popup").style.display = "none";
+                    }
+                    function deleteRowFunction(btndelete) {     
+
+                        if(typeof(btndelete) == "object") { 
+                            $(btndelete).closest("tr").remove();
+                        } else {
+                            return false;
+                        }
                     }
                     function editRowFunction(btnedit) {
                         if(typeof(btnedit) == "object") {
