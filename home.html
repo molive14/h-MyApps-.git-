@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script type="text/javascript">
+        function loading(){
+            $("#loading").show();
+            $("#content").hide();       
+        }
+</script>
+
+<div id="loading">
+  <div class="d-flex justify-content-center">
+    <img src="{{ url_for('static',filename='loading-gif-transparent.gif') }}" style="width:10%; height:10%;">
+  </div>
+</div>
+
+
+<div id="content">
+  <div class="d-flex justify-content-center">
+    {% if cname %}
+    <p>Cname: {{ cname }}</p>
+    {% else %}
+    <p>No Cname</p>
+    {% endif %}
+  </div>
+
+  {% if ips %}
+  <div class="d-flex justify-content-center">
+    <table class="table table-striped text-center">
+      <thead>
+        <tr>
+          <th scope="col">IP</th>
+          <th scope="col">Status</th>
+          <th scope="name">Name</th>
+          <th scope="enable">Enable</th>
+          <th scope="disable">Disable</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ip in ips %}
+        <tr>
+          <th scope="row">{{ ip.ip }}</th>
+          <td>{{ ip.status }}</td>
+          <td>{{ ip.name }}</td>
+          <td><form method="POST" action=""><button type="submit" class="btn btn-success" name="enable_button_{{ loop.index0 }}" value='{{ ip }}' onclick="loading();">Enable</button></form></td>
+          <td><form method="POST" action=""><button type="submit" class="btn btn-danger" name="disable_button_{{ loop.index0 }}" value='{{ ip }}' onclick="loading();">Disable</button></form></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="d-flex justify-content-center">
+    <form method="POST" action="">
+      <button type="submit" class="btn btn-success" name="enable_all_button" value="enable_all" onclick="loading();">Enable All</button> <button type="submit" class="btn btn-danger" name="disable_all_button" value="disable_all" onclick="loading();">Disable All</button>
+    </form>
+  </div>
+
+
+  {% for message in get_flashed_messages() %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+
+  {% else %}
+    <div class="d-flex justify-content-center"><p>No IPs for Cname: {{ cname }}</p></div>
+  {% endif %}
+
+</div>
+
+<div class="d-flex justify-content-center">
+  <form method="POST" action="/logout">
+    <button type="submit" class="btn btn-info" name="logout_button" value="logout" onclick="loading();">Logout</button>
+  </form>
+</div>
+
+{% endblock %}
