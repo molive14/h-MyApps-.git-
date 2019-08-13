@@ -154,7 +154,8 @@
                                     <th>{{interview.job}}</th>
                                     <th>{{interview.time}}</th>
                                     <th>{{interview.resume}}</th>
-                                    <td><input  type="button" value="Delete Row" onclick="deleteRowFunction(this);"></td>
+                                    <td><button type="button" class="delete" id="delete">Delete</button></td>
+                                    <!-- <td><input type="button" id = "delete" value="Delete Row" onClick="Delete()" ></td> -->
                                     <td><input type="button"  value="Edit Row" onclick="editRowFunction(this);"></td>
                                     <td><input type="button"  value="Save Row" id="saveRow" onclick="saveRowFunction(this);"></td>
                                     
@@ -167,6 +168,19 @@
                     
             
                     <script> 
+                 
+                            $('#delete').click(function(){
+                            $.ajax({
+                            type: 'POST',
+                            url: "/Delete",
+                            data: {interviews4},
+                            dataType: "text",
+                            success: function(data) {
+                                alert("Deleted Interview");
+                                }
+                            });
+                        });
+                
                     function openForm() {
                         document.getElementById("interview-popup").style.display = "block";
 
@@ -174,14 +188,8 @@
                     function closeForm() {
                         document.getElementById("interview-popup").style.display = "none";
                     }
-                    function deleteRowFunction(btndelete) {     
-
-                        if(typeof(btndelete) == "object") { 
-                            $(btndelete).closest("tr").remove();
-                        } else {
-                            return false;
-                        }
-                    }
+            
+                
                     function editRowFunction(btnedit) {
                         if(typeof(btnedit) == "object") {
                            $(btnedit).closest("tr").prop("contentEditable", true);
