@@ -7,12 +7,27 @@ app.debug = True
 
 interviews = [{   }]
 
+def Delete(time):
+    with open("interviews.json", 'r') as f:
+        interviews4 = json.loads(f.read())
+        print("interviews4")
+        print(interviews4)
+    del interviews4[time]
+
+ #file hasnt change
+    with open("interviews.json", 'w') as f:
+        json.dump(interviews4,f)
+        print(interviews4)
+
+#  #first key in jason
+
+Delete("2019-08-12T17:41")
 
 
 
-@app.route('/home')
-def home():
-    return render_template('homePage.html')
+
+@app.route('/home', methods= ['GET', 'POST'])
+
 
 @app.route('/interviews', methods=["POST", "GET"])
 def interview():
@@ -20,7 +35,7 @@ def interview():
         print(request.form["interviewee"])
         interview =  {   "interviewee" : request.form["interviewee"],
                   "interviewer" : request.form["interviewer"],
-                  "interviewerEmail": request.form["interviewerEmail"],
+                  "time": request.form["time"],
                   "candidatesEmail" : request.form["candidatesEmail"],
                   "job" : request.form["job"],
                   "description" : request.form["description"],
@@ -49,22 +64,26 @@ def candidates():
        print(request.form["interviewee"])
        interview =  {   "interviewee" : request.form["interviewee"],
                   "interviewer" : request.form["interviewer"],
-                  "interviewerEmail": request.form["interviewerEmail"],
+                 "telephone": request.form["telephone"],
                   "candidatesEmail" : request.form["candidatesEmail"],
                   "job" : request.form["job"],
                   "description" : request.form["description"],
                   "time" : request.form["time"]}
        interviews.append(interview)
 
+      
+
        return redirect(url_for( "interview", interviews = interviews ))
+   
+   
     with open ("interviews.json", 'r') as f:
        interviews2 = json.loads(f.read()) 
        print (interviews2)
        interviews3 = [ ]
        for i in interviews2 :
             interviews3.append(interviews2[i])
-
-        
+         
+           
     return render_template('candidates.html',interviews=interviews3)
     
 
@@ -79,6 +98,7 @@ def faq():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
 
 
 
