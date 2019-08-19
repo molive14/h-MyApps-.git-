@@ -7,25 +7,36 @@ app.debug = True
 
 interviews = [{   }]
 
+
+    
+@app.route('/delete', methods=['GET', 'POST'])
+
 def Delete(time):
-    with open("interviews.json", 'r') as f:
-        interviews4 = json.loads(f.read())
-        print("interviews4")
-        print(interviews4)
-    del interviews4[time]
+    try:
+        if request.method == 'POST':
+            interview.time = request.form
+            print(request.values.get("delete_button_0"))
+        with open("interviews.json", 'r') as f:
+            interviews4 = json.loads(f.read())
+            print("interviews4")
+            print(interviews4)
+        del interviews4[time]
 
  #file hasnt change
-    with open("interviews.json", 'w') as f:
-        json.dump(interviews4,f)
-        print(interviews4)
+        with open("interviews.json", 'w') as f:
+            json.dump(interviews4,f)
+            print(interviews4)
+    # except RuntimeError:
+    except TypeError:
+ #first key in jason
+        return time 
+        print(Delete(time = request.values.get("delete_button_0")))
+# try:
+#     Delete(time = request.values.get("delete_button_0")))
+# except RuntimeError:
+#     print("Tried to Delete Key")
 
-#  #first key in jason
-
-Delete("2019-08-12T17:41")
-
-
-
-
+       
 @app.route('/home', methods= ['GET', 'POST'])
 
 
@@ -60,20 +71,20 @@ def interview():
 
 @app.route('/candidates', methods=["POST", "GET"])
 def candidates():
-    if request.method == "POST": 
-       print(request.form["interviewee"])
-       interview =  {   "interviewee" : request.form["interviewee"],
-                  "interviewer" : request.form["interviewer"],
-                 "telephone": request.form["telephone"],
-                  "candidatesEmail" : request.form["candidatesEmail"],
-                  "job" : request.form["job"],
-                  "description" : request.form["description"],
-                  "time" : request.form["time"]}
-       interviews.append(interview)
+    # if request.method == "POST": 
+    #    print(request.form["interviewee"])
+    #    interview =  {   "interviewee" : request.form["interviewee"],
+    #               "interviewer" : request.form["interviewer"],
+    #              "telephone": request.form["telephone"],
+    #               "candidatesEmail" : request.form["candidatesEmail"],
+    #               "job" : request.form["job"],
+    #               "description" : request.form["description"],
+    #               "time" : request.form["time"]}
+    #    interviews.append(interview)
 
       
 
-       return redirect(url_for( "interview", interviews = interviews ))
+    #    return redirect(url_for( "interview", interviews = interviews ))
    
    
     with open ("interviews.json", 'r') as f:
@@ -85,7 +96,7 @@ def candidates():
          
            
     return render_template('candidates.html',interviews=interviews3)
-    
+
 
 @app.route('/login')
 def index():
