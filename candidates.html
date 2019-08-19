@@ -128,17 +128,19 @@
                                     <tr id="candidatesTable"></tr>
                     <thead>
                     <tr>
-                    <th>Interviewee</th>
-                    <th>Interviewer</th>
-                    <th>CandidatesEmail</th>
-                    <th>Telephone</th>
-                    <th>Description</th>
-                    <th>Job</th>
-                    <th>Time</th>
-                    <th>Resume</th>
-                    <th>delete</th>
-                    <th>Edit</th>
-                    <th>Save</th>
+                    <th scope="col">interview</th>
+                    <th scope="col">Interviewee</th>
+                    <th scope="col">Interviewer</th>
+                    <th scope="col">CandidatesEmail</th>
+                    <th scope="col">Telephone</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Job</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Resume</th>
+
+                    <th scope="delete">delete</th>
+                    <th scope="edit">Edit</th>
+                    <th scope="save">Save</th>
        
                   
                     </tr>
@@ -146,6 +148,7 @@
                     
                     {% for interview in interviews %} 
                     <tr id = "interview">
+                                    <th scope="row">{{interview.interview}}</th>
                                     <th>{{interview.interviewee}}</th>
                                     <th>{{interview.interviewer}}</th>
                                     <th>{{interview.candidatesEmail}}</th>
@@ -154,8 +157,7 @@
                                     <th>{{interview.job}}</th>
                                     <th>{{interview.time}}</th>
                                     <th>{{interview.resume}}</th>
-                                    <td><button type="button" class="delete" id="delete">Delete</button></td>
-                                    <!-- <td><input type="button" id = "delete" value="Delete Row" onClick="Delete()" ></td> -->
+                                    <td><form method="POST" action="/delete" ><input  type="submit" class="delete" name="delete_button_{{loop.index0}}" value="{{interview.time}}" onclick ="deleteRow();"></form></td>
                                     <td><input type="button"  value="Edit Row" onclick="editRowFunction(this);"></td>
                                     <td><input type="button"  value="Save Row" id="saveRow" onclick="saveRowFunction(this);"></td>
                                     
@@ -168,18 +170,15 @@
                     
             
                     <script> 
-                 
-                            $('#delete').click(function(){
-                            $.ajax({
-                            type: 'POST',
-                            url: "/Delete",
-                            data: {interviews4},
-                            dataType: "text",
-                            success: function(data) {
+                    function deleteRow() {
+                        $.ajax({
+                            url: "/delete",
+                            success: function(result) {
                                 alert("Deleted Interview");
-                                }
-                            });
-                        });
+                            }
+                        })
+                    }
+                 
                 
                     function openForm() {
                         document.getElementById("interview-popup").style.display = "block";
