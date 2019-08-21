@@ -10,12 +10,10 @@ interviews = [{   }]
 
     
 @app.route('/delete', methods=['GET', 'POST'])
-
-def Delete(time):
-    try:
+def Delete():
+     try:
         if request.method == 'POST':
-            interview.time = request.form
-            print(request.values.get("delete_button_0"))
+            time = request.form.get("delete_button_0") 
         with open("interviews.json", 'r') as f:
             interviews4 = json.loads(f.read())
             print("interviews4")
@@ -26,19 +24,22 @@ def Delete(time):
         with open("interviews.json", 'w') as f:
             json.dump(interviews4,f)
             print(interviews4)
-    # except RuntimeError:
-    except TypeError:
- #first key in jason
-        return time 
-        print(Delete(time = request.values.get("delete_button_0")))
-# try:
-#     Delete(time = request.values.get("delete_button_0")))
-# except RuntimeError:
-#     print("Tried to Delete Key")
-
+    #  except :
        
-@app.route('/home', methods= ['GET', 'POST'])
-
+        
+ #first key in jason
+        # print(Delete(time = request.values.get("delete_button_0")))
+            return time
+            Delete(time)
+     except :
+            return render_template('candidates.html')
+        # try:
+            
+        # except :
+        #     print("successfully deleted")
+        
+            
+         
 
 @app.route('/interviews', methods=["POST", "GET"])
 def interview():
@@ -50,6 +51,7 @@ def interview():
                   "candidatesEmail" : request.form["candidatesEmail"],
                   "job" : request.form["job"],
                   "description" : request.form["description"],
+                  "telephone" : request.form["telephone"],
                   "time" : request.form["time"]}
         interviews.append(interview)
      
@@ -110,6 +112,9 @@ def faq():
 def about():
     return render_template('about.html')
 
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 
 
