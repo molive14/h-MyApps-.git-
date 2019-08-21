@@ -4,14 +4,13 @@
   left:0px;
   width: 10000px;
   height:10px;
-  background: #0000ff;
+  background: #ff5200;
 
 }
 
 
 .fa:hover {
   opacity: 0.7;
-
 }
 
 body {
@@ -45,7 +44,7 @@ a:hover, a:active {
     background-color: white ;
 }
 
-ul {
+#website_links {
   top: 10px;
   margin: 0;
   padding:0;
@@ -60,10 +59,6 @@ ul {
   /* background-color:  white  ; */
   opacity: 0.5;
   filter: alpha(opacity=50);
-
- 
-  
-  
 }
 
 li a{
@@ -82,7 +77,7 @@ li a: hover {
 
 
     button {
-      background-color: grey ;
+      background-color: #00adff;
       color: white;
       padding: 10px 10px;
       margin: 4px 0;
@@ -120,7 +115,7 @@ input[type=text], select, textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-  background: #ff5200; 
+  background: #00adff; 
 }
 
 input[type=submit] {
@@ -132,28 +127,26 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
-  background-color: #ff5200;
-}
+
 
 
 .form {
-
-  background-color: #ff5200;
+  top: 50px;
+  background-color: #00adff;
   padding: 20px;
   width: 700px;
   length: 700px;
-  background:#ff5200;
+  background:#00adff;
 }
 
 .email {
   margin-top: 4px;
-  background: #ff5200;
+  background: #00adff;
 }
 
 .description {
   margin-top: 8px;
-  background: #ff5200;
+  background: #00adff;
 }
 .submit {
   margin-top: 30px;
@@ -165,9 +158,7 @@ td, th {
 
 }
 
-.items{
-    margin-top:8px;
-}
+
 
 .updateButton{
   position: absolute;
@@ -176,11 +167,14 @@ td, th {
 }
 table {
   border-collapse: collapse;
+  top: 100px;
 }
 
 table, td, th {
   border: 1px solid black;
-     background: #ff5200;
+     background: #00adff;
+     top: 100px;
+     
 }
 
 
@@ -190,7 +184,7 @@ table, td, th {
 
 
 .interviews-form__input:focus,.interviews-form__input:active {
-  border-color: #ff5200;
+  border-color: #00adff;
   outline: 0;
 }
 
@@ -200,7 +194,7 @@ margin: 8px 16px 0;
 margin: 0.5rem 1rem 0;
 padding: 0 16px 2px;
 padding: 0 1rem 0.125rem;
-background-color: #ff5200;
+background-color: #00adff;
 border: 0;
 color: black;
 font-family: lato, sans-serif;
@@ -225,7 +219,7 @@ position: relative;
 }
 
 .items {
-  margin-top: 25px;
+  margin-top: 70px;
 }
 
 .ghost {
@@ -269,15 +263,16 @@ margin-top: 20px;
 }
 
 .open-button {
-  background-color: #0000ff;
+  background-color: #ff5200;
   color: white;
   border: none;
   cursor: pointer;
 
   position: fixed;
-  top: 23px;
-  right: 10px;
+  top: 40px;
+  right: 20x;
   width: 280px;
+  
 }
 .interviewForm-popup {
   display: none;
@@ -291,7 +286,7 @@ margin-top: 20px;
 .form-container {
   max-width: 500px;
   padding: 10px;
-  background-color: #ff5200;
+  background-color: #00adff;
   outline: 0;
 
 }
@@ -301,3 +296,46 @@ margin-top: 20px;
 .radio {
   margin-top: 8px;
 }
+#chase {
+ float: right ;
+ margin-top: -100px;
+ overflow: auto;
+}
+#about_text {
+ display: inline-block;
+}
+#about_title {
+  display: inline-block;
+}
+.values {
+  margin-top: 7px;
+}
+.information {
+  margin-top: 7px;
+} 
+.accordion {
+  background-color: #ff5200;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 400px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+.active, .accordion: hover {
+  background-color: grey;
+}
+.panel{
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+
+
+
