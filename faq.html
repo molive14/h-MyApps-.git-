@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head> 
-        <div id ="purple_bar"></div>
+        <div id ="orange_bar"></div>
         <div class="about-page">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,13 +19,42 @@
     </head>
     <body> 
 
-        <ul> 
+        <ul id ="website_links"> 
             <li><a href="/interviews" target="_blank">Interviews</a></li>
             <li><a href="/candidates" target="_blank">Candidates</a></li>
             <li><a href="/about" target="_blank">About</a></li>
         </ul>
         <div style="margin-left:15%; padding: 1px 16px; height:1000px;">
-            <h3>NOT AVAILABLE</h3>    
+            <h3>Below You can Find Helpful Information  </h3>   
+            <img id ="chase" src = "static/styles/chase_logo.jpg" width = "400" height = "300"/> 
+
+        <button class="accordion">How do I Create a Interview?</button>
+        <div class="panel">
+            <p>To create a candidate you must use the vertical navigation bar on the left side of the web page where it says interviews.</p>
+        </div>
+
+        <button class= "accordion">How do I add a candidate?</button>
+        <div class="panel">
+        <p>To add a candidate go to the candidate page on the vertical navigation bar located on the left side of the page. There will be a add candidate button on the page that you can use.</p>
+        </div>
+
+        <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight ) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+        </script>
+        </div>
     </body>
-</div>
+
 </html>
