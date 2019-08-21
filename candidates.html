@@ -44,8 +44,8 @@
                        <label for="radio">Intern:</label>
                        <input type="radio" id="intern" name="job" value="intern">
                            
-                       <label for="radio">Apprentenship:</label>
-                       <input type="radio" id="Apprentenship" name="job" value="Apprentenship">
+                       <label for="radio">Apprenticeship:</label>
+                       <input type="radio" id="Apprenticeship" name="job" value="Apprenticeship">
                           
                        <label for="radio">Full-Time:</label>
                        <input type="radio" id="full-time" name="job" value="full-time">
@@ -85,8 +85,8 @@
         <label for="radio">Intern:</label>
         <input type="radio" id="intern" name="job" value="intern">
             
-        <label for="radio">Apprentenship:</label>
-        <input type="radio" id="Apprentenship" name="job" value="Apprentenship">
+        <label for="radio">Apprenticeship:</label>
+        <input type="radio" id="Apprenticeship" name="job" value="Apprenticeship">
            
         <label for="radio">Full-Time:</label>
         <input type="radio" id="full-time" name="job" value="full-time">
@@ -157,7 +157,7 @@
                                     <th>{{interview.job}}</th>
                                     <th>{{interview.time}}</th>
                                     <th>{{interview.resume}}</th>
-                                    <td><form method="POST" action="/delete" ><input  type="submit" class="delete" name="delete_button_{{loop.index0}}" value="{{interview.time}}" onclick ="deleteRow();"></form></td>
+                                    <td><form method="POST" action="/delete" ><input  type="submit" class="delete" name="delete_button_{{loop.index}}" value="{{interview.time}}" onclick ="deleteRow();"></form></td>
                                     <td><input type="button"  value="Edit Row" onclick="editRowFunction(this);"></td>
                                     <td><input type="button"  value="Save Row" id="saveRow" onclick="saveRowFunction(this);"></td>
                                     
