@@ -7,8 +7,7 @@ app.debug = True
 
 interviews = [{   }]
 
-
-    
+ 
 @app.route('/delete', methods=['GET', 'POST'])
 def Delete():
      try:
@@ -18,25 +17,25 @@ def Delete():
             interviews4 = json.loads(f.read())
             print("interviews4")
             print(interviews4)
+    #  except KeyError:
         del interviews4[time]
 
  #file hasnt change
         with open("interviews.json", 'w') as f:
             json.dump(interviews4,f)
             print(interviews4)
-    #  except :
-       
-        
+    
  #first key in jason
         # print(Delete(time = request.values.get("delete_button_0")))
+        
             return time
             Delete(time)
-     except :
+     except KeyError:
             return render_template('candidates.html')
-        # try:
-            
-        # except :
-        #     print("successfully deleted")
+        
+           
+
+
         
             
          
